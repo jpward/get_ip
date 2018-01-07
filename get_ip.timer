@@ -1,0 +1,5 @@
+[Unit]
+Description=Run get_ip.service every 10 minutes
+
+[Timer]
+OnCalendar=*:0/10
