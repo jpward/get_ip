@@ -8,7 +8,7 @@ set -e
 
 HERE="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd)"
 
-OLD_IP="$(grep "IP=" mail.txt | sed "s/IP=//")"
+OLD_IP="$(grep "IP=" ${HERE}/mail.txt | sed "s/IP=//")"
 echo ${OLD_IP}
 
 NEW_IP="$(nc 4.ifcfg.me 23 | grep IPv4 | cut -d' ' -f4 | sed 's/\r//')"
