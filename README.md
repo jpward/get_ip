@@ -6,7 +6,7 @@ The script is setup to run as a systemd service every 10 minutes
 
 # dependencies
 
-'''
+```
 sudo apt-get update
 sudo apt-get install curl
-'''
+```
