@@ -15,7 +15,8 @@ fi
 OLD_IP="$(grep "IP=" /tmp/mail.txt | sed "s/IP=//")"
 echo ${OLD_IP}
 
-NEW_IP="$(nc 4.ifcfg.me 23 | grep IPv4 | cut -d' ' -f4 | sed 's/\r//')"
+#NEW_IP="$(nc 4.ifcfg.me 23 | grep IPv4 | cut -d' ' -f4 | sed 's/\r//')"
+NEW_IP="$(curl -4 ifconfig.co)"
 
 #if a valid IP is found (invalid will be blank)
 if echo ${NEW_IP} | grep -q [0-9] ; then
