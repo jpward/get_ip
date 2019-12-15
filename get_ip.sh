@@ -19,7 +19,7 @@ echo ${OLD_IP}
 NEW_IP="$(curl -4 ifconfig.co)"
 
 #if a valid IP is found (invalid will be blank)
-if echo ${NEW_IP} | grep -q [0-9] ; then
+if echo ${NEW_IP} | grep -qE "\b([0-9]{1,3}\.){3}[0-9]{1,3}\b" ; then
   echo ${NEW_IP}
 else
   #Try again later
